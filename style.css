@@ -1,0 +1,169 @@
+
+
+body {
+  background-image: url('Turkish_Coffee_Sticker-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: contain;
+  animation: scrollBackground 60s linear infinite;
+  background-color: #f4efe9;
+  font-family: 'Georgia', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+@keyframes scrollBackground {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
+
+
+.container {
+  position: relative;
+  background: rgba(255, 248, 240, 0.85); 
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 300px;
+  animation: float 4s ease-in-out infinite;
+  z-index: 1;
+}
+
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #6b3e26;
+}
+
+.timer-display {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #3e2723;
+}
+
+.buttons button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background: #d9a15f;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.buttons button:hover {
+  background: #b1783d;
+}
+
+.buttons button:active {
+  transform: scale(0.95);
+  transition: transform 0.1s;
+}
+
+
+.stages {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #5d4037;
+}
+
+/* Timer pulse while running */
+.timer-display.running {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); color: #3e2723; }
+  50% { transform: scale(1.05); color: #6b3e26; }
+}
+
+
+/* Stage fade-in effect */
+.stages {
+  opacity: 0;
+  animation: fadeInStage 0.8s ease forwards;
+}
+
+@keyframes fadeInStage {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ready animation (wiggle) */
+.stages.ready {
+  animation: wiggle 0.5s ease-in-out 4;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+  75% { transform: rotate(-2deg); }
+  100% { transform: rotate(0); }
+}
+
+.stages {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.5s ease;
+}
+
+.stages.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Container that holds bubbles */
+.boil-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 120px;
+  z-index: 0;
+  pointer-events: none;
+  overflow: visible;
+}
+
+
+.bubble {
+  position: absolute;
+  bottom: 0;
+  background: #6b3e26;
+  border-radius: 50%;
+  opacity: 0.2;
+  animation: none;
+}
+
+
+@keyframes bubble {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.2;
+  }
+  30% {
+    transform: translate(-3px, -20px) scale(1.2);
+    opacity: 0.4;
+  }
+  70% {
+    transform: translate(4px, -60px) scale(1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-2px, -90px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+
+
