@@ -29,7 +29,6 @@ function updateStage() {
     newStage = "Stage: Ready! ☕";
   }
 
-  // Only update and animate if the stage has changed
   if (newStage !== currentStage) {
   currentStage = newStage;
   stageDisplay.textContent = newStage;
@@ -84,8 +83,8 @@ function resetTimer() {
   timeLeft = totalTime;
   updateTimerDisplay();
   stageDisplay.textContent = "Stage: Not started";
-  startBtn.textContent = "Start"; // Reset the button text
-  isRunning = false; // Reset running state
+  startBtn.textContent = "Start"; 
+  isRunning = false; 
   document.querySelector(".boil-animation").classList.remove("boiling");
 
 }
@@ -93,7 +92,6 @@ function resetTimer() {
 startBtn.addEventListener("click", startTimer);
 resetBtn.addEventListener("click", resetTimer);
 
-// Initial display
 updateTimerDisplay();
 
 function generateBubble() {

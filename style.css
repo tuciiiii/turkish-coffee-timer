@@ -76,7 +76,6 @@ h1 {
   color: #5d4037;
 }
 
-/* Timer pulse while running */
 .timer-display.running {
   animation: pulse 1.5s ease-in-out infinite;
 }
@@ -87,7 +86,6 @@ h1 {
 }
 
 
-/* Stage fade-in effect */
 .stages {
   opacity: 0;
   animation: fadeInStage 0.8s ease forwards;
@@ -98,7 +96,6 @@ h1 {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Ready animation (wiggle) */
 .stages.ready {
   animation: wiggle 0.5s ease-in-out 4;
 }
@@ -122,7 +119,6 @@ h1 {
   transform: translateY(0);
 }
 
-/* Container that holds bubbles */
 .boil-animation {
   position: absolute;
   top: 50%;
